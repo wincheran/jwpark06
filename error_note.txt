@@ -1,4 +1,20 @@
-▷▷▷ whitelabel error page 발생
+-----------------------------------------------------------------------------------------------------
+▷▷▷ "whitelabel error page"
 해당 요청(경로)을 처리해줄 페이지가 없거나,
 해당 요청(경로)에 맞는 메서드로 연결해줄 'Controller 어노테이션 Class'가 없는 경우에 발생한다.
 Controller 어노테이션을 지닌 Class를 만들어서 요청을 처리해준다.
+-----------------------------------------------------------------------------------------------------
+▷▷▷ "spring boot configuration annotation processor not found in classpath"
+@ConfigurationProperties 을 사용했을 때 발생한 에러로
+Spring Boot에서 외부 프로퍼티 파일을 로드하기 위해서는 메타 정보를 파일로 만들어서 추가해줘야 하는데,
+(=참고로 자동완성되는 정보도 만들어져있는 메타 정보를 기반으로 함)
+이 메타 정보를 완성해주는 플러그인을 추가하라는 알림이 뜬 것임.
+아래와 같은 코드 한줄을 build.gradle에 추가해주면 해결된다.
+"org.springframework.boot:spring-boot-configuration-processor"
+참고: https://rkaehdaos.github.io/2018/10/29/springboot-features-external-config/
+-----------------------------------------------------------------------------------------------------
+▷▷▷ "cannot find symbol ~~~"
+만약 해당 문구가 Lombok 과 관련된 기능에서 문제가 발생했다면, 아래의 경로에 대해 체크한다.
+Settings → Compiler → Annotation Processors → Enable annotation processing 활성화
+참고: https://chan7ee.tistory.com/entry/intellij-lombok-%EC%A0%81%EC%9A%A9
+-----------------------------------------------------------------------------------------------------
