@@ -1,0 +1,4 @@
+▷▷▷ whitelabel error page 발생
+해당 요청(경로)을 처리해줄 페이지가 없거나,
+해당 요청(경로)에 맞는 메서드로 연결해줄 'Controller 어노테이션 Class'가 없는 경우에 발생한다.
+Controller 어노테이션을 지닌 Class를 만들어서 요청을 처리해준다.
