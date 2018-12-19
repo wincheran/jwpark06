@@ -6,6 +6,10 @@ spring:
   h2:
     console:
       enabled: true
+  mvc:
+    static-path-pattern: /resources/static/** # 정적 리소스들 경로 지정.
+
+
 ---
 property:
   test:
