@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/mariadb/front")
-public class controllerMariadbFront {
+public class ControllerMariadbFront {
 
     @GetMapping("/list")
     public String list() {

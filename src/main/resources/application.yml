@@ -8,8 +8,14 @@ spring:
       enabled: true
   mvc:
     static-path-pattern: /resources/static/** # 정적 리소스들 경로 지정.
-
-
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/test
+    username: root
+    password: my024712
+  devtools: # devtools 설정 변경.
+    livereload: # LiveReload 기능 켜기
+      enabled: true
 ---
 property:
   test:

@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/mariadb/popup/front")
-public class controllerMariadbPopupFront {
+public class ControllerMariadbPopupFront {
 
-    @GetMapping("/write")
-    public String write() {
-        return "mariadb/popup/write";
+    @GetMapping("/register")
+    public String register() {
+        return "mariadb/popup/register";
     }
 
     @GetMapping("/delete")

@@ -1,4 +1,4 @@
 package com.demo.controller.mariadb;
 
-public class controllerMariadbAction {
+public class ControllerMariadbAction {
 }

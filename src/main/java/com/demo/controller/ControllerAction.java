@@ -1,4 +1,4 @@
 package com.demo.controller;
 
-public class controllerAction {
+public class ControllerAction {
 }

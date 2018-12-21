@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/resources/static/js/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="/resources/static/css/bootstrap.min.css">
+
+    <title>글 쓰기</title>
+</head>
+<body>
+    <div>
+        글 쓰기 팝업
+    </div>
+    <div>
+        <form id="regForm">
+            <input type="text" id="name" class="form-control" placeholder="이름을 입력하세요"> <br />
+            <input type="number" id="age" class="form-control" placeholder="나이를 입력하세요"> <br />
+
+            <button id="submitBtn" class="btn btn-warning">전송</button>
+            <button type="reset" class="btn btn-default">내용 삭제</button>
+        </form>
+
+        <br />
+        <button id="showDataBtn" class="btn btn-primary">데이터 출력</button>
+        <button id="transferData" class="btn btn-warning">가짜 데이터 전달</button>
+        <br />
+    </div>
+</body>
+
+<script>
+    $(document).ready(function(){
+        $('#submitBtn').on('click', function(){
+            BUTTON.submit();
+        });
+
+        $('#transferData').on('click', function() {
+            BUTTON.submit2();
+        })
+
+    });
+
+    var BUTTON = {
+        submit: function() {
+            // todo regform 데이터의 json 타입으로 변경해서 /mariadb/popup/action/register에 post 방식 전달.
+            $.ajax({
+                type: 'POST',   // 전달 방식
+                url: '/mariadb/popup/action/register',  // 전달할 URL 경로
+                contentType: 'application/json',    // 보내는 데이터 타입: JSON
+                dataType: 'json', // 받는 데이터 타입: JSON
+                data: JSON.stringify($('#regForm').serializeArray()),
+                success: function(data) {
+                    console.log('Success !');
+                },
+                error: function(e) {
+                    console.log('Fail !');
+                }
+            })
+        },
+
+        submit2: function() {
+            var oTemp = {
+                name: 'testObject',
+                age: 300
+            };
+
+            // todo regform 데이터의 json 타입으로 변경해서 /mariadb/popup/action/register에 post 방식 전달.
+            $.ajax({
+                type: 'POST',   // 전달 방식
+                url: '/mariadb/popup/action/register',  // 전달할 URL 경로
+                contentType: 'application/json',    // 보내는 데이터 타입 (참고로, dataType은 받을 때 데이터 타입임)
+                data: JSON.stringify(oTemp),
+                success: function(data) {
+                    console.log('Success !');
+                },
+                error: function(e) {
+                    console.log('Fail !');
+                }
+            })
+        }
+    }
+</script>
+
+</html>

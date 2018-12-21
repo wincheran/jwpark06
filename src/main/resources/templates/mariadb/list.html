@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <script type="text/javascript" src="/resources/static/js/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="/resources/static/css/bootstrap.min.css">
-    <script type="text/javascript" src="/resources/static/js/mariadb/list.js"></script>
 
     <title>글 목록</title>
 </head>
 <body>
-    글 목록 화면
+    <div>
+        글 목록 화면
+    </div>
+    <div>
+        <button id="regContentBtn" class="btn btn-warning">글 쓰기</button>
+    </div>
 </body>
+
+<script>
+    $('#regContentBtn').on('click', function(){
+        BUTTON.regContent();
+    });
+
+    var BUTTON = {
+        regContent: function () {
+            window.open('/mariadb/popup/front/register', null, 'width=400, height=500');
+        }
+    };
+</script>
+
 </html>

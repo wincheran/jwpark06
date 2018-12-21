@@ -27,7 +27,11 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-configuration-processor')
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf') 
-	compileOnly('org.projectlombok:lombok')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf') // Thymeleaf
+	compile('org.mariadb.jdbc:mariadb-java-client') // Maria dB
+	compile('org.springframework.boot:spring-boot-starter-jdbc') // Jdbc
+	compileOnly('org.projectlombok:lombok') // Lombok
+	compileOnly('org.springframework.boot:spring-boot-devtools') // Devtool (autoreload)
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	runtime('mysql:mysql-connector-java')
 }
